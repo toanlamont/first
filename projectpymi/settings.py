@@ -131,7 +131,9 @@ MIDDLEWARE_CLASSES = [
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
-
+STATICFILES_DIRS = [(os.path.join(BASE_DIR, "static"),
+                     '/home/toan/projectpymi/app1/static'
+)]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
