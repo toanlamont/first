@@ -131,12 +131,7 @@ MIDDLEWARE_CLASSES = [
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
-STATICFILES_DIRS = (
-("js", os.path.join(STATIC_ROOT, 'js')),
-("css", os.path.join(STATIC_ROOT)),
-("images", os.path.join(STATIC_ROOT, 'images')),
-("fonts", os.path.join(STATIC_ROOT, 'fonts')),
-)
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
