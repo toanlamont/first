@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-21je77=7slbf2dt_-orpfxr@r8oeiniq2mri&yx5bobomjas_b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['toan-pymi.herokuapp.com']
+ALLOWED_HOSTS = ['toan-pymi.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -124,9 +124,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'CricketTeamManagement/static')
-]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
