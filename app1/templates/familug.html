@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Familug CR</title>
+    <link rel="stylesheet" href="{% static 'fami.css' %}" type="text/css">
+</head>
+<body>
+    <div id="header">
+        <h1>Đây là trang web của Pymier</h1>
+        <h1><a href="jobs">Find Job Here</a> </h1>
+
+
+
+    </div>
+    <div id="content">
+        <div id="python" class="row">
+            <h1 class="title">
+                Python</h1>
+            <ul>
+                {% for python in pythons %}
+                    <li>
+                        <a href={{ python.url }}>{{ python.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+    </div>
+    <div id="command" class="row">
+        <h1 class="title">Command</h1>
+    <ul>
+        {% for command in commands %}
+        <li>
+            <a href={{ command.url }}>{{ command.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+    <div id="sysadmin" class="row">
+        <h1 class="title">Sysadmin</h1>
+    <ul>
+        {% for sys in syss %}
+        <li>
+            <a href={{ sys.url }}>{{ sys.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+    <div id="lastest" class="row">
+        <h1 class="title">Lastest</h1>
+    <ul>
+        {% for las in lass %}
+        <li>
+            <a href={{ las.url }}>{{ las.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+
+    </div>
+
+
+
+
+</body>
+</html>
