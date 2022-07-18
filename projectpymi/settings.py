@@ -11,9 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
-
 import django_on_heroku
-from django.conf import settings
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-21je77=7slbf2dt_-orpfxr@r8oeiniq2mri&yx5bobomjas_b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*", 'localhost']
 
@@ -46,15 +44,12 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-]
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 
+]
 
 ROOT_URLCONF = 'projectpymi.urls'
 
@@ -126,8 +121,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
-  os.path.join(STATIC_ROOT, 'static/'),
+    os.path.join(BASE_DIR, 'static'),
 )
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 
 
@@ -145,5 +142,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 MEDIA_URL = '/media/'
+django_on_heroku.settings(locals())
 
 
