@@ -32,6 +32,7 @@ urlpatterns = [
     path('bp/<int:n>', views.binh_phuong),
     path('up/<str:name>', views.up),
     path('jobs/', views.jobs),
+
     path('', views.familug)
     
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

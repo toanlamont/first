@@ -12,12 +12,26 @@
             background-color: darkgoldenrod;
         }
     </style>
-    
+
 </head>
 <body>
     <div id="header"; style="background-color: #264b5d; color: white; height: 100px">
         <h1>Đây là trang web của Pymier</h1>
         <h1><a href="jobs/", style="color: yellow">Find Job Here</a> </h1>
+        <div class="check" style="position: fixed">
+            <form method="post">
+                {% csrf_token %}
+                <label style="color: red">
+                    <h3>Loto checker
+                        (Nhập 2 chữ số cuối):
+                </label>
+                <input type="text" name="num1" class="form-control1"/>
+                <button>check</button>
+                <label>
+                    {{ c }}
+                </label>
+            </form>
+        </div>
 
 
 

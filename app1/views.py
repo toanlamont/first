@@ -1,4 +1,5 @@
-
+import requests
+from bs4 import BeautifulSoup
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.shortcuts import render
@@ -36,6 +37,21 @@ def familug(request):
     com = command.objects.values()
     las = lastest.objects.values()
     sys = sysadmin.objects.values()
-    return render(request, 'familug.html', {'pythons': pyt, 'commands': com, 'syss': sys, "lass":las})
+    c = ''
+    results = []
+    r = requests.get("http://ketqua1.net")
+    tree = BeautifulSoup(markup=r.text)
+    nodes = tree.find_all(name="td", attrs={"class": "chu17"})
+
+    for node in nodes:
+        results.append(node.text)
+    if request.method == "POST":
+        n = str(request.POST.get('num1'))
+        if n in results:
+            c = 'Bạn đã trúng lô'
+        else:
+            c = 'Bạn đã tạch lô'
+    return render(request, 'familug.html', {'pythons': pyt, 'commands': com, 'syss': sys, "lass":las, "c":c})
+
 
 
