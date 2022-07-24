@@ -49,6 +49,8 @@ def familug(request):
         n = str(request.POST.get('num1'))
         if n in results:
             c = 'Bạn đã trúng lô'
+        elif n.isspace() is True:
+            c = " "
         else:
             c = 'Bạn đã tạch lô'
     return render(request, 'familug.html', {'pythons': pyt, 'commands': com, 'syss': sys, "lass":las, "c":c})
