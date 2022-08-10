@@ -3,9 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>Familug CR</title>
+    <style>
+        .content{
+            width: 25%; height: 100%; padding-top: 10px; float: left;
+            
+
+        }
+        .header{
+            background-color: #600505;
+            height: 100px;
+            width: 100%;
+            color: white;
+            padding: 20px;
+            float: left;
+
+
+        }
+        .cc{
+            width: 100%;
+            height: 100%;
+            float: left;
+
+
+
+        }
+
+        }
+    </style>
 </head>
-<body>
-Fixing bug
+<body style="background-color: white">
+<div class="header">
+    <h2>Trang web được lấy dữ liệu từ <a style="color: #ccf736" href="https://www.familug.org/">FAMILUG</a> </h2>
+    <h3>
+        <a style="color: #ccf736" href="/jobs/">Click vào đây để vào trang Find Job</a>
+    </h3>
+</div>
+
+<div class="cc">
+    <div class="content" id="python" >
+<h1 style="text-align: center">Python</h1>
+    <ul>
+        {% for pyt in pyts %}
+        <li>
+            <a href={{ pyt.link }} target='_blank'>{{ pyt.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+<div class="content" id="command" >
+<h1 style="text-align: center">Command</h1>
+    <ul>
+        {% for com in coms %}
+        <li>
+            <a href={{ com.link }} target='_blank'>{{ com.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+
+
+
+<div class="content" id="sysadmin" >
+<h1 style="text-align: center">Sysadmin</h1>
+    <ul>
+        {% for sys in syss %}
+        <li>
+            <a href={{ sys.link }} target='_blank'>{{ sys.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="content" id="lastest" >
+<h1 style="text-align: center">Lastest</h1>
+    <ul>
+        {% for las in lass %}
+        <li>
+            <a href={{ las.link }} target='_blank'>{{ las.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+</div>
+
+
 </body>
 
 
